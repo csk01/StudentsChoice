@@ -79,15 +79,10 @@ This visualization was intended for anyone who is interested in the Beatles as i
 * The stacked bar chart at the top also puts their time together into perspective. It is surprising to think how short the Beatles were together as I’d always thought it was much longer.  
 
 ### What needs improvement?
-*The links to the data sources were not provided on the visualizations clearly, even though it is mentioned that the data was taken from Wikipedia. The absence of clear data sources and what manipulations were being done on it, make the visualizations tough to reproduce. 
-
-Addition of an about page to help the user understand the many features of this app and its interactions would have also been very useful.
-
-Based on what word appeared most in their songs, one cannot derive what their songs were about. For example, the song might say I hate love and still be classified as a love song. The author’s definition of a love song as a song containing at least one lyric with word love is not intuitive. I would probably just change the wording as to what words they liked to use the most. 
-
-The color scheme used for the songwriters are red for McCartney and green for Lennon and orange for them combined. One minor critique I’d give would be to use two colors, say, blue and yellow to represent McCartney and Lennon, and Green or other such combinations to represent them combined, to  make it a tad bit more natural.
-
-
-Additionally, the data  is based on the US releases rather than the original UK releases, so it could cause confusion to people as many popular releases such as Rubber Soul and Revolver actually had different tracklists in US vs UK.
+* The links to the data sources were not provided on the visualizations clearly, even though it is mentioned that the data was taken from Wikipedia. The absence of clear data sources and what manipulations were being done on it, make the visualizations tough to reproduce. 
+* Addition of an about page to help the user understand the many features of this app and its interactions would have also been very useful.
+* Based on what word appeared most in their songs, one cannot derive what their songs were about. For example, the song might say I hate love and still be classified as a love song. The author’s definition of a love song as a song containing at least one lyric with word love is not intuitive. I would probably just change the wording as to what words they liked to use the most. 
+* The color scheme used for the songwriters are red for McCartney and green for Lennon and orange for them combined. One minor critique I’d give would be to use two colors, say, blue and yellow to represent McCartney and Lennon, and Green or other such combinations to represent them combined, to  make it a tad bit more natural.
+* On another minor note, the data  is based on the US releases rather than the original UK releases, so it could cause confusion to people as many popular releases such as Rubber Soul and Revolver actually had different tracklists in US vs UK. 
 
 
