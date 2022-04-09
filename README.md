@@ -1,114 +1,93 @@
-# Krishnan Chelakkarai Sivaraman |  CS424 - Project-1 - Subway  
+# Krishnan Chelakkarai Sivaraman |  CS424 - Student's Choice Presentation - An Analysis of the Beatles
 
-## Introduction
-#### Link to Shiny App: <https://csk01.shinyapps.io/subway/> 
-#### Youtube Video <https://youtu.be/8CBXgb6cLjk>
+### Link to the original viz:  https://public.tableau.com/app/profile/adam.e.mccann/viz/BeatlesAnalysis/BeatlesAnalysis
 
-This App was built using R and Shiny. It visaulizes the Chicago CTA/Subway Ridership Data from 2001 to 2021.  
+![image](https://user-images.githubusercontent.com/90429287/162551075-e578c394-ba78-43c5-adae-4e8d1d23bd0a.png)
 
-The landing page is a dashboard to let the user compare the entries at for each year. The first plot compares the entries at UIC-Halstead on the left section and O'Hare on the right section of the page. The user can select the station from the dropdown list to compare the stations(O'Hare, UIC-Halsted and Addison)
+## What is its purpose?
+This interactive dashboard provides an informative peek under the hood of a band that is regularly argued to be the most impactful modern musicians of all time, The Beatles. The visualizations help the users to get an idea of the discography of the Beatles based on their US releases during their time together. 
 
-![image](https://user-images.githubusercontent.com/90429287/153977671-aad2b0b7-a738-45b1-8039-e1e4817dce4e.png)
+### What is the data?
 
+![image](https://user-images.githubusercontent.com/90429287/162551128-f076a4d7-bd0c-403f-887a-fce026c42e89.png)
 
-The second set of bar plots compare the total entries of a station in a given year based on the type of filter. The user can select the Year from the dropdown menu and the charts update for the chosen year. Likewise the User can choose to compare the data either per day, month or day of the week.
-The plots below shows the comparison of daily entries at UIC-Halstead vs O'Hare.
+The main data is the list of the Beatles song hits and album releases in the US along with their writing credits. This data comprises 18 albums and 175 songs recorded by them from 1964 to 1970. It includes details such as song name, songwriter(s), year, album release name, and if it was a hit or not. For the last two plots, the data also includes the lyrics of the songs. 
 
-![image](https://user-images.githubusercontent.com/90429287/153977724-c9a6670d-72e7-4e35-911c-2e35e60e4dac.png)
+### How was the data collected?
+The song/album data comes from this Wikipedia page, https://en.wikipedia.org/wiki/List_of_songs_recorded_by_the_Beatle and the song lyrics data is taken from a Beatles fan site, http://beatlesnumber9.com/. Wikipedia pages are not a reliable source of data as they might not be consistently accurate and are only as good as its editors. The information it contains at a particular time could be vandalism, a work in progress, or simply incorrect. The Wikipedia page does include multiple references/notes/sources in the end which shows where the data was collected from. Although this does enable verifiability, it will require a lot of fact-checking to ensure integrity. 
 
-
-Below is an example where the ridership data is shown monthly on the left and weekly on the right 
-
-![image](https://user-images.githubusercontent.com/90429287/153978232-c27950a8-9f95-437a-bc55-8e9903141f95.png)
-
-Lastly the same data is presented in a tabular form and the User can select the number of entries being displayed
-
-![image](https://user-images.githubusercontent.com/90429287/153978517-68b58c13-27b4-45cd-8747-68fa6bf8ba9d.png)
+### Who are the users that this visualization was made for?
+This visualization was intended for anyone who is interested in the Beatles as it presents their discography in an easy to understand way. It is suited for a deep dive into the work of the Beatles as it not only presents their album/hit releases and individual contribution, but also presents an analysis of their song lyrics in terms of the number of unique words(excluding stopwords) used per song, and the words used most commonly across songs. 
 
 
-The user can choose the Interesting Dates option in the sidemenu and navigate to view the visualizations of 10 interesting trends observed in this dataset. The user can select the visualization to view from the date dropdown menu on the bottom of the screen
+### What questions do people want to ask?
+#### This dashboard can help answer the a lot of including the questions below as stated above each visualization. 
+1. What songs did the Beatles sing from 1964 to 1970?
+2. What were their biggest hits and when?
+3. Who wrote most of their songs?
+4. What were most of their songs about?
+5. How did the members of the Beatles contribute to albums? 
+6. Which songwriter has the largest vocabulary?
 
-![image](https://user-images.githubusercontent.com/90429287/153979109-00be925c-49e0-4eba-81f4-3f1633dac54d.png)
 
+### How can they find the answers with this tool?
 
+#### There are basically 6 separate plots in this dashboard and using them they can find answers 
+ 1) Stacked bar (representing albums and year)
+ 2) Bar chart/Dot plot (representing songs/billboard ranking)
+ 3) Sankey chart (lines to the artists)
+ 4) Donut chart (songwriter heads)
+ 5) Text box (most used words in lyrics)
+ 6) Jitter plot (largest vocabulary by artist)
 
-  
-## Data
-#### Data Source: <https://data.cityofchicago.org/Transportation/CTA-Ridership-L-Station-Entries-Daily-Totals/5neh-572f>
-The data used for this app was downloaded from the Chicago Data Portal website. The original dataset contains 5 columns namely, station-id, station-name, date, day-type and rides spanning from 2001 to 2021. It has 1.09 Million entries.
+* The users can find out which album was released when and how many top 100 album hits it featured by interacting with the stacked bar plot. The user can also  see what songs the Beatles released during that period using the dot plot. It also tells the user where the songs in that album ranked on the Billboard and #1 rankings are separated with a dotted line. On clicking the music icon/dot plot representing the songs and their ranking on billboard, the user can also hear a small snippet of the song, shown on the bottom right. For example, the user can see that the first big hit of the Beatles was I wanna hold your hand which was #1 in Billboard ranking in 1964. 
 
-#### Data preprocessing
-Firstly the original data was loaded into a dataframe and then the date was converted to a R friendly format(yyyy-mm-dd) using lubridate library. Then the dataframe was split into 3 dataframes to store as 3 separate data files containing the date and rides columns for OHare Airport, UIC-Halstead and Addison-North Main Stations only. This was done to save space and focus only on the data which I wanted to visualize.  
+![image](https://user-images.githubusercontent.com/90429287/162551222-0f046a7d-f918-45d4-b613-ca497694ca6a.png)
  
-## Source Code
-#### Github Repo: <https://github.com/csk01/cta_subway>
-Download the repository from Github as a zip file. Extract it into any folder. Open the R code on R studio. You can run it either locally or publish it on Shiny apps.
-To run this project you need to download the repo form Github as a zip file and extract it. You need to have R-Studio and ShinyApps installed along with the correct dataset from the source mentioned above. 
-Ensure that the below of libraries are up to date.
-1. shiny
-2. shinydashboard 
-3. ggplot2
-4. lubridate
-5. DT
-6. scales
-7. dplyr
+ * Used in combination with the donut chart below, the users can find who wrote most of the songs as well as when they had written them and their individual contribution to each album. The user can see that, initially McCartney wrote most songs with Lennon as a duo but in the later stages of the band, wrote songs mostly by himself. 
+ 
+ ![image](https://user-images.githubusercontent.com/90429287/162551232-a0899731-874e-4848-8d9f-17be47ba9981.png)
 
-## Interesting Things
-The data showed a lot of trends in CTA ridership over the years. Here are some of the ones which are presented in the application
+* The users can also choose from the dropdown to filter data and find who wrote most songs  based on #1 hits, all songs or top 100 songs. 
 
-### 1. Impact of Covid-19 
-The most obivious trend was the sharp decline in number of riders at UIC-Halstead stop which was right after WHO declares Covid-19 a pandemic in March 2020.
+![image](https://user-images.githubusercontent.com/90429287/162551242-7268e058-3683-4fcd-b896-d37e63643cb3.png)
+
+* The users can find out what the most of their song lyrics were about by using the interactive text box that visualized the top lyrics used by each of the songwriters. The user can see clearly that most of the songs by McCartney, Lennon and Harrison had the word love followed by know whereas Ringo’s songs had the words garden and octopus. 
+
+![image](https://user-images.githubusercontent.com/90429287/162551246-b675189d-adf9-4af5-97a0-bc44684ac1ca.png)
+
+ *On hovering, it also tells us how many times it has appeared in that writers songs. 
+ 
+ ![image](https://user-images.githubusercontent.com/90429287/162551259-f5695fbc-7b98-406d-a6e4-06562244d99c.png)
+ 
+ * The user can also see which songwriter has the largest vocabulary using the interactive jitter plot shown below. The y-axis represents the number of unique words per song and the x-axis refers to the songwriter.  The user can see that the McCartney-Lennon duo wrote songs with a rich vocabulary and that on average, all the songwriters had the same vocabulary. Additionally, the user can filter out songs on the plot that were a hit and had the word love by toggling the hit and love buttons respectively. The user can see that most hit songs had the word love in its lyrics. 
+ 
+ ![image](https://user-images.githubusercontent.com/90429287/162551274-92178539-dffb-4321-bc7a-a518df5267e0.png)
+
+* It also has a handy search option on the left top to find a particular song to see how many unique words it contains and on clicking, the lyrics appear on the right. 
+
+![image](https://user-images.githubusercontent.com/90429287/162551281-f73f8bfb-6f1f-4f1b-a5d1-e6b3d7fde8a8.png)
+
+### What works?
+* Overall, the visualizations are curated carefully so that they are presented artfully and also easy to understand. 
+* The color palette used is consistent, and colorblind-friendly.
+*  All the visualizations (except for the stacked bar plot) are organized such that the x axis is an ordinal scale that represents the songwriter.
+*  The author’s use of a sankey chart and smooth connecting lines was visually very pleasing. It links the stacked bar and the donut plots into one coherent piece thus presenting a lot more information.
+* Overlaying minimalistic images of the songwriter(s) on the donut chart was a nice artful touch. 
+* The interactivity of the visualizations makes it fun and educational. It gives more control to the users, allowing them to select/highlight what they want to see.
+* The plots also employ text popups that convey additional information and provide more context to the users. Even though it presents a lot of information, it is not overly complicated or cluttered.  
+* The stacked bar chart at the top also puts their time together into perspective. It is surprising to think how short the Beatles were together as I’d always thought it was much longer.  
+
+### What needs improvement?
+*The links to the data sources were not provided on the visualizations clearly, even though it is mentioned that the data was taken from Wikipedia. The absence of clear data sources and what manipulations were being done on it, make the visualizations tough to reproduce. 
+
+Addition of an about page to help the user understand the many features of this app and its interactions would have also been very useful.
+
+Based on what word appeared most in their songs, one cannot derive what their songs were about. For example, the song might say I hate love and still be classified as a love song. The author’s definition of a love song as a song containing at least one lyric with word love is not intuitive. I would probably just change the wording as to what words they liked to use the most. 
+
+The color scheme used for the songwriters are red for McCartney and green for Lennon and orange for them combined. One minor critique I’d give would be to use two colors, say, blue and yellow to represent McCartney and Lennon, and Green or other such combinations to represent them combined, to  make it a tad bit more natural.
 
 
-![image](https://user-images.githubusercontent.com/90429287/153971447-8a99ad46-bf23-4a35-a9bd-46d6ffa91260.png)
-
-### 2. Cubs Game 
-Despite dull times during the pandemic we can clearly see a two spikes in ridership at OHare due to the Cubs vs Cardinals Baseball game on Sep 4th and Sep 6th 2020
-
-![image](https://user-images.githubusercontent.com/90429287/153971668-10441a69-cc9d-4c2d-8b8e-0750bff409e9.png)
-
-### 3. 9/11 Aftermath Game 
-Another trend was the sudden drop in rider count at the OHare CTA right after the 9/11 World Trade Center Attacks in 2001
-
-![image](https://user-images.githubusercontent.com/90429287/153972326-7e949056-2d94-4ced-8444-b2674e95d60b.png)
-
-### 4. BLM Protest 
-Missing data for June can be attributed to sudden halting of services due to protests in the wake of death of George Floyd
-
-![image](https://user-images.githubusercontent.com/90429287/153972569-629c4d1d-a25e-497e-82ec-e8d792d54a77.png)
-
-### 5. 7-Oct-2008 
-This day was an eventful day. The sudden spike on in ridership could be attributed to a number of reasons 
-1. Obama arriving at OHare to cast his vote
-2. First match for the Cubs world series begins
-3. Kanye West performing at United center 
-
-![image](https://user-images.githubusercontent.com/90429287/153972819-9bb50318-ad82-4698-95e2-8a471ae3b029.png)
-
-### 6. Winter Break UIC
-We dont see the usual number of riders at the UIC-Halstead stop from Dec 15 2018 to Jan 15 2019 due to UIC's Winter Break
-
-![image](https://user-images.githubusercontent.com/90429287/153973056-d0550408-243f-4f55-a691-6608f64bda7b.png)
-
-### 7. Train Derails 
-Due to the derailment of a Blue Line at OHare on March 24, the OHare station had little to no riders from March 24 - 30 2014
-
-![image](https://user-images.githubusercontent.com/90429287/153973219-c23c95d8-62f1-41c4-b682-a74099814b2a.png)
-
-### 8. OHare CTA Station Renovation
-In 2019, there were no data for brief period from Sep 27 - Oct 06 as Ohare CTA shuts down for renovation for a project
-
-![image](https://user-images.githubusercontent.com/90429287/153973739-fef6df6f-35cf-4966-953e-2a9bb8de130e.png)
-
-### 9. Chicago Cubs victory
-Chicago knows how to support its basesball team. We can see an unusual increase in the number of riders because of Chicago Cubs victory parade and rally on 4th Nov. 2016 at UIC
-
-![image](https://user-images.githubusercontent.com/90429287/153973844-6e8e514d-88a5-469f-a16c-9b96895eec61.png)
-
-### 10. Yet another Cubs game
-Spike seen in OHare ridership in July 2013 due to Cubs game at Wrigley Field. This tells us that Chicagoans do not mind travelling 10 miles to support the Cubs 
-
-![image](https://user-images.githubusercontent.com/90429287/153974630-4dc60252-99f1-4dbb-8c90-fe1b69db99b7.png)
-
+Additionally, the data  is based on the US releases rather than the original UK releases, so it could cause confusion to people as many popular releases such as Rubber Soul and Revolver actually had different tracklists in US vs UK.
 
 
